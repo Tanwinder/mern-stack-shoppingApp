@@ -2,7 +2,7 @@
 
 # dependencies
 node_modules
-dist
+public
 
 # testing
 coverage
@@ -13,6 +13,7 @@ build
 # misc
 .DS_Store
 Thumbs.db
+package-lock.json
 .env
 .idea
 npm-debug.log
