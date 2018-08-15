@@ -1,0 +1,30 @@
+{
+  "name": "mern-stack-shoppingapp",
+  "version": "1.0.0",
+  "description": "mern-shopping-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tanwinder/mern-stack-shoppingApp.git"
+  },
+  "keywords": [
+    "mern",
+    "shopping",
+    "fullstack"
+  ],
+  "author": "Tanwinder Sidhu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tanwinder/mern-stack-shoppingApp/issues"
+  },
+  "homepage": "https://github.com/Tanwinder/mern-stack-shoppingApp#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  }
+}
