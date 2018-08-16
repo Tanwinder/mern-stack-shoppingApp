@@ -1,3 +1,12 @@
-import test from './test';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './styles/main.scss';
+import 'babel-polyfill';
+import App from './app/App.js'
 
-console.log('test ',test());
+ReactDOM.render(
+    // <Provider>
+        <App />,
+    // </Provider>,
+    document.getElementById('app')
+);
