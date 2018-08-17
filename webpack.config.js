@@ -57,14 +57,20 @@ module.exports = {
                 })
             },
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['env', 'react']
+                        presets: ['env', 'react'],
+                        plugins: ["transform-object-rest-spread","transform-class-properties"]
                     }
                 }
             },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader', 'eslint-loader']
+            }
         ]
     }
 }

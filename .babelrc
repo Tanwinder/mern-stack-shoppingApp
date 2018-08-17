@@ -1,5 +1,11 @@
 {
   "presets": [
     ["react"], ["env"]
-  ]
+  ],
+  "plugins": ["transform-object-rest-spread","transform-class-properties"],
+  "env": {
+    "development" : {
+      "compact": false
+    }
+  }
 }

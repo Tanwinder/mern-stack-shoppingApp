@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const App = props => <div>
- <button type="button">zHello</button>
-</div>
+const App = props => (
+  <div>
+    <button type="button">zHello</button>
+  </div>
+);
 
 export default App;
