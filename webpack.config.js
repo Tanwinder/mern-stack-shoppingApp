@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const extractPlugin = new ExtractTextPlugin({
     filename: './style.css'
 });
@@ -18,6 +19,10 @@ module.exports = {
         new CleanWebpackPlugin(['public']),
         new HtmlWebpackPlugin({
             template: 'index.html'
+        }),
+        new ProgressBarPlugin({
+            format: 'Build [:bar] :percent (:elapsed seconds)',
+            clear: false,
         }),
         extractPlugin,
         // new webpack.optimize.CommonsChunkPlugin({
@@ -58,9 +63,11 @@ module.exports = {
             },
             {
                 test: /\.(js|jsx)$/,
+                exclude: [path.resolve(__dirname, 'node_modules')],
                 use: {
                     loader: 'babel-loader',
                     options: {
+                        cacheDirectory: true,
                         presets: ['env', 'react'],
                         plugins: ["transform-object-rest-spread","transform-class-properties"]
                     }

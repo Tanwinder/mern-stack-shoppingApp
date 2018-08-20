@@ -4,7 +4,7 @@
   "description": "mern-shopping-app",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --port=8000 --host=localhost",
+    "start": "webpack-dev-server --progress --port=8000 --host=localhost",
     "build": "webpack",
     "build-prod": "webpack -p --config webpack.prod.config.js",
     "server": "nodemon server.js"
@@ -47,6 +47,7 @@
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.0",
     "postcss-loader": "^3.0.0",
+    "progress-bar-webpack-plugin": "^1.11.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.22.1",
     "webpack": "^4.16.5",
