@@ -5,7 +5,4 @@ import './styles/main.scss';
 import 'babel-polyfill';
 import App from './app/App';
 
-ReactDOM.render(
-<App />,
-document.getElementById('app'),
-);
+ReactDOM.render(<App />, document.getElementById('app'));

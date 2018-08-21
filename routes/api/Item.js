@@ -11,7 +11,10 @@ const Item = require('../../models/Item');
 router.get('/', (req,res) => {
     Item.find()
     .sort({date: -1})
-    .then( items => res.json(items))
+    .then( items => {
+        console.log('items ', items);
+        res.json(items)
+    })
 })
 
 //@routes Get api/items
@@ -31,7 +34,12 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     Item.findById(params.req.id)
-    .then( item => item.remove.then(()=> res.json({success: true})))
+    .then( item => {
+        return item.remove
+            .then(()=> res.json({success: true}))
+            .catch( err => console.log(err))
+
+    })
 })
 
 module.exports = router;

@@ -1,18 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class ShoppingApp extends Component {
-    static propTypes = {
-
-    }
-
-    render() {
-        return (
-            <div>
-                Hello world!
-            </div>
-        )
-    }
-}
+const ShoppingApp = () => <div>Hello New World</div>;
 
 export default ShoppingApp;
