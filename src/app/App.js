@@ -4,7 +4,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import ShoppingApp from './containers/ShoppingApp';
 
-const App = props => (
+const App = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" name={ShoppingApp} component={ShoppingApp} />
