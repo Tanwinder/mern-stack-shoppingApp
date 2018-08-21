@@ -2,11 +2,12 @@
     "parser": "babel-eslint",
     "extends": "airbnb",
     "rules": {
-    "no-unused-vars": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "max-len": [1, 120, 2, {"ignoreComments": true}],
-    "globals": {
-        "document": false
+        "no-unused-vars": 0,
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "max-len": [1, 120, 2, {"ignoreComments": true}],
+        "globals": {
+            "document": false
+        },
+        "indent": ["error", "tab"]
     }
-  }
 }    
