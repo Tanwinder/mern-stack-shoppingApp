@@ -1,15 +1,31 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import { createLogger } from "redux-logger";
 import ShoppingApp from './containers/ShoppingApp';
+import AllReducers from './reducers';
+
+// const middleware = [thunk];
+
+// if(process.env.NODE_ENV !== 'production'){
+//   middleware.push(createLogger());
+// }
+
+const store = createStore(
+  AllReducers,
+  applyMiddleware(thunk),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 const App = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route path="/" name={ShoppingApp} component={ShoppingApp} />
-    </Switch>
-  </BrowserRouter>
+  <Provider store={ store }>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" name={ShoppingApp} component={ShoppingApp} />
+        </Switch>
+    </BrowserRouter>
+  </Provider>
 );
 
 export default App;
