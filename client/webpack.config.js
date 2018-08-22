@@ -38,8 +38,8 @@ module.exports = {
 		port: 8080,
 		compress: true,
 		// hot: true,
-		// inline: true,
-		// progress: true,
+		inline: true,
+		progress: true,
 	},
 	module: {
 		rules: [

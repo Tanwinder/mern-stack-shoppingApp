@@ -17,8 +17,8 @@ router.get('/', (req,res) => {
     })
 })
 
-//@routes Get api/items
-//@desc   Get all items
+//@routes POST api/items
+//@desc   Post an item
 //@access Public
 
 router.post('/', (req, res) => {
@@ -30,8 +30,8 @@ router.post('/', (req, res) => {
     .catch( err => res.json(err))
 })
 
-//@routes Get api/items
-//@desc   Get all items
+//@routes DELETE api/items
+//@desc   Delete an item
 //@access Public
 
 router.delete('/:id', (req, res) => {
