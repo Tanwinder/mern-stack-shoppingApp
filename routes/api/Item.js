@@ -13,7 +13,7 @@ router.get('/', (req,res) => {
     .sort({date: -1})
     .then( items => {
         console.log('items ', items);
-        res.json(items)
+        return res.json(items)
     })
 })
 
@@ -25,7 +25,9 @@ router.post('/', (req, res) => {
     const newItem = new Item({
         name: req.body.name
     });
-    newItem.save().then( item => res.json(item))
+    newItem.save()
+    .then( item => res.json(item))
+    .catch( err => res.json(err))
 })
 
 //@routes Get api/items
@@ -33,13 +35,14 @@ router.post('/', (req, res) => {
 //@access Public
 
 router.delete('/:id', (req, res) => {
-    Item.findById(params.req.id)
+    Item
+    .findById(req.params.id)
     .then( item => {
-        return item.remove
+        return item.remove()
             .then(()=> res.json({success: true}))
-            .catch( err => console.log(err))
 
     })
+    .catch( () => res.status(400).json({success: false}))
 })
 
 module.exports = router;

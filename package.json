@@ -2,15 +2,7 @@
   "name": "mern-stack-shoppingapp",
   "version": "1.0.0",
   "description": "mern-shopping-app",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack-dev-server --progress --port=8000 --host=localhost",
-    "build": "webpack",
-    "build-prod": "webpack -p --config webpack.prod.config.js",
-    "server": "nodemon server.js",
-    "test": "jest --coverage",
-    "test:watch": "jest --watch --coverage"
-  },
+  "main": "",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Tanwinder/mern-stack-shoppingApp.git"
@@ -22,62 +14,20 @@
     "url": "https://github.com/Tanwinder/mern-stack-shoppingApp/issues"
   },
   "homepage": "https://github.com/Tanwinder/mern-stack-shoppingApp#readme",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client-install": "npm install --prefix client",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
   "devDependencies": {
-    "autoprefixer": "^9.1.1",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.6",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "clean-webpack-plugin": "^0.1.19",
-    "css-loader": "^1.0.0",
-    "cssnano": "^4.0.5",
-    "enzyme": "^3.4.4",
-    "enzyme-adapter-react-16": "^1.2.0",
-    "enzyme-to-json": "^3.3.4",
-    "eslint": "^5.3.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-loader": "^2.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "file-loader": "^1.1.11",
-    "html-webpack-plugin": "^3.2.0",
-    "jest": "^23.5.0",
-    "node-sass": "^4.9.3",
-    "nodemon": "^1.18.3",
-    "postcss-cssnext": "^3.1.0",
-    "postcss-import": "^12.0.0",
-    "postcss-loader": "^3.0.0",
-    "progress-bar-webpack-plugin": "^1.11.0",
-    "redux-mock-store": "^1.5.3",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.22.1",
-    "webpack": "^4.16.5",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "nodemon": "^1.18.3"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.3",
     "concurrently": "^3.6.1",
     "express": "^4.16.3",
-    "mongoose": "^5.2.8",
-    "prop-types": "^15.6.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
-  },
-  "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.js",
-    "verbose": true
+    "mongoose": "^5.2.8"
   }
 }

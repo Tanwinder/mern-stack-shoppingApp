@@ -8,6 +8,8 @@
         "globals": {
             "document": false
         },
-        "indent": ["error", "tab", {"ignoredNodes": ["JSXElement"]}]
+        "indent": ["error", "tab", {"ignoredNodes": ["JSXElement"]}],
+        "no-tabs": 0,
+        "no-underscore-dangle": [2, { "allow": [] }]
     }
 }    

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { createLogger } from "redux-logger";
+import { createLogger } from 'redux-logger';
 import ShoppingApp from './containers/ShoppingApp';
 import AllReducers from './reducers';
 
@@ -14,16 +14,16 @@ import AllReducers from './reducers';
 // }
 
 const store = createStore(
-  AllReducers,
-  applyMiddleware(thunk),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+	AllReducers,
+	applyMiddleware(thunk),
+);
 
 const App = () => (
-  <Provider store={ store }>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" name={ShoppingApp} component={ShoppingApp} />
-        </Switch>
+  <Provider store={store}>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" name={ShoppingApp} component={ShoppingApp} />
+      </Switch>
     </BrowserRouter>
   </Provider>
 );
