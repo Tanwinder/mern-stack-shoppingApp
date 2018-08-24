@@ -10,6 +10,12 @@
         },
         "indent": ["error", "tab", {"ignoredNodes": ["JSXElement"]}],
         "no-tabs": 0,
-        "no-underscore-dangle": [2, { "allow": [] }]
+        "no-underscore-dangle": [2, { "allow": [] }],
+        "react/jsx-indent": ["disabled"],
+        "react/prop-types": ["error", {
+            "ignore": ["dispatch"],
+            "customValidators": [],
+            "skipUndeclared": false
+          }]
     }
 }    
