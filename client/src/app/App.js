@@ -8,13 +8,15 @@ import {
 import { Provider } from 'react-redux';
 import ShoppingApp from './containers/ShoppingApp';
 import store from './store';
+import NotFound from './components/NotFound/NotFound';
 
 const App = () => (
   <Provider store={store}>
     <BrowserRouter>
       <Switch>
         <Route path="/" name={ShoppingApp} component={ShoppingApp} />
-        <Redirect to={Page404} />
+        <Route path="/notfound" name={NotFound} component={NotFound} />
+        <Redirect to="/" />
       </Switch>
     </BrowserRouter>
   </Provider>
