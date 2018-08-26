@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import NavBar from '../../components/Navbar/NavBar';
 import action from '../../actions/shoppingactions';
 
 class ShoppingApp extends Component {
@@ -13,7 +12,7 @@ class ShoppingApp extends Component {
 	render() {
 		return (
             <div>
-                <NavBar />
+                Container div
             </div>
 		);
 	}

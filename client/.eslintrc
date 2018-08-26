@@ -1,6 +1,5 @@
 {
     "parser": "babel-eslint",
-    "extends": "airbnb",
     "rules": {
         "no-unused-vars": 0,
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
@@ -10,12 +9,6 @@
         },
         "indent": ["error", "tab", {"ignoredNodes": ["JSXElement"]}],
         "no-tabs": 0,
-        "no-underscore-dangle": [2, { "allow": [] }],
-        "react/jsx-indent": ["disabled"],
-        "react/prop-types": ["error", {
-            "ignore": ["dispatch"],
-            "customValidators": [],
-            "skipUndeclared": false
-          }]
+        "no-underscore-dangle": [2, { "allow": [] }]
     }
 }    

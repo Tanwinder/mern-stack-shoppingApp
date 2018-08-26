@@ -4,15 +4,11 @@ import ReactDOM from 'react-dom';
 import './styles/main.scss';
 import 'babel-polyfill';
 import App from './app/App';
-import NavBar from './app/components/Navbar/NavBar';
-import Footer from './app/components/Footer/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter } from 'react-router-dom';
 
-const RootApp = () => (
-    <div>
-        <NavBar />
+ReactDOM.render(
+    <BrowserRouter>
         <App />
-        <Footer />
-    </div>
+    </BrowserRouter>, document.getElementById('app')
 );
-
-ReactDOM.render(<RootApp />, document.getElementById('app'));

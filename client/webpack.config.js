@@ -55,10 +55,11 @@ module.exports = {
 					}],
 			},
 			{
-				test: /\.scss$/,
+				test: /\.(scss|css)$/,
 				// AND WE USE IT HERE
+				exclude: "/node_modules/",
 				use: extractPlugin.extract({
-				use: ['css-loader', 'sass-loader'/*, 'postcss-loader'*/],
+					use: ['css-loader', 'sass-loader', 'postcss-loader'],
 					fallback: 'style-loader',
 				}),
 			},
