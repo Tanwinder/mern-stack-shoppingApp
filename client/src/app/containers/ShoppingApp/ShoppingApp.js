@@ -40,9 +40,8 @@ class ShoppingApp extends Component {
 
 	render() {
 		const { items } = this.props;
-		console.log('item prop', items);
 		return (
-            <div>
+            <div className="shopping-app">
                 <Form className="list-form">
 					<FormGroup>
 						<Label for="NewItem"></Label>
