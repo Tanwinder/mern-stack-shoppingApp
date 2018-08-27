@@ -1,6 +1,7 @@
 .main {
-    height: 85vh;
+    flex-grow: 1;
     display: flex;
     padding: 20px;
     background: whitesmoke;
+    overflow: auto;
 }

@@ -9,6 +9,7 @@ import {
 	NavItem,
 	NavLink as RsNavLink,
 } from 'reactstrap';
+import './NavBar.scss';
 
 class NavBar extends Component {
 	constructor(props) {
@@ -30,7 +31,7 @@ class NavBar extends Component {
           <NavbarBrand >ShoppingApp</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className="ml-auto nav-items" navbar>
               <NavItem>
                 <NavLink to="/" exact activeClassName="active" >Shopping-List</NavLink>
               </NavItem>

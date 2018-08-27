@@ -6,12 +6,13 @@ import Main from './components/Main';
 import Footer from './components/Footer/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope, faKey, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import './app.scss';
 
 library.add(faEnvelope, faKey, faTimesCircle);
 
 const App = () => (
   <Provider store={store}>
-    <div>
+    <div className="app">
       <NavBar />
       <Main />
       <Footer />

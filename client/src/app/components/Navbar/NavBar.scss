@@ -1,0 +1,7 @@
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    & .nav-item {
+        margin-left: 15px;
+    }
+}

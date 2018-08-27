@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { AddItems, deleteItem } from '../../actions/shoppingactions';
+import { getListOfItems, AddItems, deleteItem } from '../../actions/shoppingactions';
 import { Form, FormGroup, Button, Input, Label} from 'reactstrap';
 import ItemsList from '../../components/ItemsList/ItemsList';
 import './ShoppingApp.scss';
@@ -14,11 +14,19 @@ class ShoppingApp extends Component {
 		}
 	}
 
+	componentDidMount() {
+		this.props.dispatch(getListOfItems())
+	}
+
 	OnValueChange = (e) => {
 		this.setState({
 			newItem: e.target.value,
 		})
 	}
+
+	// save = () => {
+	// 	this.props.dispatch(SaveItems())
+	// }
 
 	AddItem = () => {
 		const checkDuplicate = this.props.items.some(ac => ac.name == this.state.newItem);
@@ -47,7 +55,7 @@ class ShoppingApp extends Component {
 						<Label for="NewItem"></Label>
 						<Input 
 							value={this.state.newItem} 
-							onChange={(e) => this.OnValueChange(e)} 
+							onChange={(e) => this.OnValueChange(e)}
 							type="text" 
 							id="NewItem" 
 							placeholder="Add Items..." />
@@ -55,6 +63,7 @@ class ShoppingApp extends Component {
 					<Button color="primary" onClick={this.AddItem}>Add Items</Button>
 				</Form>
 				<ItemsList data={items} deleteItem={this.deleteItem}/>
+				{/* <Button className="save-button" type="button" color="success" onClick={this.save}>Save</Button> */}
             </div>
 		);
 	}
