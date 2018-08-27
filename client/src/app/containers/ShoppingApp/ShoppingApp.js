@@ -28,7 +28,8 @@ class ShoppingApp extends Component {
 	// 	this.props.dispatch(SaveItems())
 	// }
 
-	AddItem = () => {
+	AddItem = (event) => {
+		event.preventDefault();
 		const checkDuplicate = this.props.items.some(ac => ac.name == this.state.newItem);
 		if(!!this.state.newItem && !checkDuplicate) {
 			const item = {
@@ -50,7 +51,7 @@ class ShoppingApp extends Component {
 		const { items } = this.props;
 		return (
             <div className="shopping-app">
-                <Form className="list-form">
+                <Form className="list-form" onSubmit={this.AddItem}>
 					<FormGroup>
 						<Label for="NewItem"></Label>
 						<Input 
@@ -60,7 +61,7 @@ class ShoppingApp extends Component {
 							id="NewItem" 
 							placeholder="Add Items..." />
 					</FormGroup>
-					<Button color="primary" onClick={this.AddItem}>Add Items</Button>
+					<Button color="primary" type="submit">Add Items</Button>
 				</Form>
 				<ItemsList data={items} deleteItem={this.deleteItem}/>
 				{/* <Button className="save-button" type="button" color="success" onClick={this.save}>Save</Button> */}
