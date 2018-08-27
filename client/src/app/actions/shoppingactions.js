@@ -1,6 +1,6 @@
 import AT from './shoppingActionType';
 
-const getListOfItems = list => ({
+export const getListOfItems = list => ({
 	type: AT.GET_LIST_ITEMS,
 	list,
 });
@@ -9,6 +9,10 @@ const getListOfItems = list => ({
 // 	dispatch(dispatchListItems(list));
 // };
 
-export default {
-	getListOfItems,
-};
+export const AddItems = (item) => {
+	console.log('item ac ',item);
+	return {
+		type: AT.ADD_ITEM,
+		item: item,
+	}
+}

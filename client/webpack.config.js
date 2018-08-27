@@ -57,7 +57,6 @@ module.exports = {
 			{
 				test: /\.(scss|css)$/,
 				// AND WE USE IT HERE
-				exclude: "/node_modules/",
 				use: extractPlugin.extract({
 					use: ['css-loader', 'sass-loader', 'postcss-loader'],
 					fallback: 'style-loader',

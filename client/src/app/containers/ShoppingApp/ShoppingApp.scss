@@ -1,0 +1,7 @@
+.list-form {
+    display: flex;
+    align-items: center;
+    & .form-group {
+        margin-bottom: 1.5rem;
+    }
+}

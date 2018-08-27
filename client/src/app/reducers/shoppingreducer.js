@@ -1,22 +1,18 @@
 import AT from '../actions/shoppingActionType';
 
 const initialState = {
-	list: [],
+	items: [],
 };
 
-function ShoppingReducer(state = initialState, action) {
+const ShoppingReducer = (state = initialState, action) => {
 	switch (action.type) {
-	case AT.GET_LIST_ITEMS: {
+	case AT.ADD_ITEM:
 		return {
 			...state,
-			list: action.list,
-		};
-	}
-	default: {
-		return {
-			state,
-		};
-	}
+			items: [action.item, ...state.items]
+		}
+	default:
+		return state
 	}
 }
 

@@ -32,10 +32,10 @@ class NavBar extends Component {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                  <RsNavLink><NavLink to="/" exact activeClassName="active" >Shopping-List</NavLink></RsNavLink>
+                <NavLink to="/" exact activeClassName="active" >Shopping-List</NavLink>
               </NavItem>
               <NavItem>
-                  <RsNavLink><NavLink to="/about" activeClassName="active">About</NavLink></RsNavLink>
+                <NavLink to="/about" activeClassName="active">About</NavLink>
             </NavItem>
             </Nav>
           </Collapse>
