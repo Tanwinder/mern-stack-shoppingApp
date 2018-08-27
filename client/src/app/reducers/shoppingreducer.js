@@ -39,6 +39,11 @@ const ShoppingReducer = (state = initialState, action) => {
 			...state,
 			items: state.items.filter( ac => ac.id != action.id),
 		}
+	case AT.DELETE_LIST_ITEMS_ERROR:
+		return {
+			...state,
+			err: action.err
+		};
 	default:
 		return state
 	}

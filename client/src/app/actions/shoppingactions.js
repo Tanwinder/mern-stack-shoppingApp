@@ -52,6 +52,22 @@ export const AddItems = (item) => {
 }
 
 export const deleteItem = (id) => {
+	// return dispatch => {
+	// 	axios.delete(`${add_item_url}/${id}`)
+	// 		.then(res => {
+	// 			dispatch({
+	// 				type: AT.DELETE_LIST_ITEMS,
+	// 				id: id,
+	// 			})
+	// 		})
+	// 		.catch(err => {
+	// 			dispatch({
+	// 				type: AT.DELETE_LIST_ITEMS_ERROR,
+	// 				err: err,
+	// 			})
+	// 		})
+	// }
+
 	return {
 		type: AT.DELETE_LIST_ITEMS,
 		id: id,
