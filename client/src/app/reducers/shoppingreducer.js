@@ -10,6 +10,11 @@ const ShoppingReducer = (state = initialState, action) => {
 		return {
 			...state,
 			items: [action.item, ...state.items]
+		};
+	case AT.DELETE_LIST_ITEMS:
+		return {
+			...state,
+			items: state.items.filter( ac => ac.id != action.id),
 		}
 	default:
 		return state

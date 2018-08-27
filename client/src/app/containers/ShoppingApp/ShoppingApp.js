@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { AddItems } from '../../actions/shoppingactions';
+import { AddItems, deleteItem } from '../../actions/shoppingactions';
 import { Form, FormGroup, Button, Input, Label} from 'reactstrap';
 import ItemsList from '../../components/ItemsList/ItemsList';
 import './ShoppingApp.scss';
@@ -26,6 +26,13 @@ class ShoppingApp extends Component {
 			id: this.state.newItem,
 		};
 		this.props.dispatch(AddItems(item));
+		this.setState({
+			newItem: '',
+		})
+	}
+
+	deleteItem = (id) => {
+		this.props.dispatch(deleteItem(id));
 	}
 
 	render() {
@@ -45,7 +52,7 @@ class ShoppingApp extends Component {
 					</FormGroup>
 					<Button color="primary" onClick={this.AddItem}>Add Items</Button>
 				</Form>
-				<ItemsList data={items}/>
+				<ItemsList data={items} deleteItem={this.deleteItem}/>
             </div>
 		);
 	}

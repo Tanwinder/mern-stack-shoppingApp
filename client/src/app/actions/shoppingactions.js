@@ -16,3 +16,10 @@ export const AddItems = (item) => {
 		item: item,
 	}
 }
+
+export const deleteItem = (id) => {
+	return {
+		type: AT.DELETE_LIST_ITEMS,
+		id: id,
+	}
+}
