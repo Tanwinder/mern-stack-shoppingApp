@@ -37,7 +37,7 @@ const ShoppingReducer = (state = initialState, action) => {
 	case AT.DELETE_LIST_ITEMS:
 		return {
 			...state,
-			items: state.items.filter( ac => ac.id != action.id),
+			items: state.items.filter( ac => ac._id != action.id),
 		}
 	case AT.DELETE_LIST_ITEMS_ERROR:
 		return {

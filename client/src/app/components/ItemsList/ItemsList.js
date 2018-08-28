@@ -8,10 +8,10 @@ const ItemsList = ({data, deleteItem}) => {
         <ListGroup>
             {data.length !== 0 ? data.map(item => {
             		return (
-                    <ListGroupItem className="list-items" key={item.id}>
+                    <ListGroupItem className="list-items" key={item._id}>
                         <span>{item.name}</span>
                         <FontAwesomeIcon
-                        	onClick={() => deleteItem(item.id)}
+                        	onClick={() => deleteItem(item._id)}
                         	icon="times-circle"
                         	color="red"
                         	size="1x" />

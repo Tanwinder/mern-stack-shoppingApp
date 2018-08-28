@@ -24,17 +24,12 @@ class ShoppingApp extends Component {
 		})
 	}
 
-	// save = () => {
-	// 	this.props.dispatch(SaveItems())
-	// }
-
 	AddItem = (event) => {
 		event.preventDefault();
 		const checkDuplicate = this.props.items.some(ac => ac.name == this.state.newItem);
 		if(!!this.state.newItem && !checkDuplicate) {
 			const item = {
-				name: this.state.newItem,
-				id: this.state.newItem,
+				name: this.state.newItem
 			};
 			this.props.dispatch(AddItems(item));
 			this.setState({

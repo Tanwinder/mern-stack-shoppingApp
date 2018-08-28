@@ -12,7 +12,6 @@ router.get('/', (req,res) => {
     Item.find()
     .sort({date: -1})
     .then( items => {
-        console.log('items ', items);
         return res.json(items)
     })
 })
@@ -39,7 +38,7 @@ router.delete('/:id', (req, res) => {
     .findById(req.params.id)
     .then( item => {
         return item.remove()
-            .then(()=> res.json({success: true}))
+            .then((item)=> res.json(item))
 
     })
     .catch( () => res.status(400).json({success: false}))
